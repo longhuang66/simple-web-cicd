@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CI/CD 演示项目</title>
+    <title>CI/CD 演示项目 V2.0</title>
     <style>
         body {
             font-family: 'Microsoft YaHei', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
             margin: 0;
             padding: 0;
             min-height: 100vh;
@@ -28,10 +28,13 @@
             margin-bottom: 10px;
         }
         .version {
-            color: #667eea;
-            font-size: 18px;
+            color: #11998e;
+            font-size: 24px;
             font-weight: bold;
             margin: 20px 0;
+            background: #e8f5e9;
+            padding: 10px;
+            border-radius: 8px;
         }
         .info {
             background: #f8f9fa;
@@ -45,6 +48,14 @@
             font-size: 48px;
             margin: 20px 0;
         }
+        .new-feature {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: left;
+            border-radius: 0 8px 8px 0;
+        }
         .footer {
             margin-top: 30px;
             color: #666;
@@ -56,7 +67,7 @@
     <div class="container">
         <div class="success">&#9989;</div>
         <h1>CI/CD 部署成功！</h1>
-        <div class="version">Version 1.0 - 初始版本</div>
+        <div class="version">Version 2.0 - 更新版本</div>
         
         <div class="info">
             <strong>学号：</strong>2024001<br>
@@ -64,11 +75,20 @@
             <strong>班级：</strong>软件工程1班
         </div>
         
+        <div class="new-feature">
+            <strong>V2.0 新特性：</strong><br>
+            1. 优化页面样式<br>
+            2. 添加版本标识<br>
+            3. 增加新功能模块<br>
+            4. CI/CD自动部署更新
+        </div>
+        
         <div class="info">
             <strong>部署信息：</strong><br>
             部署时间：2026-05-17<br>
-            环境：Development<br>
-            状态：运行正常
+            环境：Production<br>
+            状态：运行正常<br>
+            版本：2.0
         </div>
         
         <div class="footer">
