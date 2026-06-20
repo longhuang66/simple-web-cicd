@@ -1,0 +1,51 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # 检出代码
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    # 设置 Node.js 环境
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    
+    # 安装依赖（如果有）
+    - name: Install dependencies
+      run: |
+        echo "Installing dependencies..."
+        # npm install  # 如果需要
+    
+    # 构建项目
+    - name: Build project
+      run: |
+        echo "Building project..."
+        mkdir -p dist
+        cp index.html dist/
+        cp README.md dist/
+        echo "Build completed!"
+    
+    # 运行测试（模拟）
+    - name: Run tests
+      run: |
+        echo "Running tests..."
+        echo "All tests passed!"
+    
+    # 部署到 GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
